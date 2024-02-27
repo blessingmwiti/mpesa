@@ -37,6 +37,7 @@ if (isset($_POST['submit'])) {
     $amount = $_POST['amount']; // Collect from form
     $lipa_na_mpesa_online_shortcode = $_ENV['LIPA_NA_MPESA_ONLINE_SHORTCODE'];
     $lipa_na_mpesa_online_passkey = $_ENV['LIPA_NA_MPESA_ONLINE_PASSKEY'];
+    // The transaction type for M-PESA Express is "CustomerPayBillOnline" for PayBill Numbers and "CustomerBuyGoodsOnline" for Till Numbers.
     $transaction_type = 'CustomerPayBillOnline';
     $timestamp = date('YmdHis');
     $password = base64_encode($lipa_na_mpesa_online_shortcode . $lipa_na_mpesa_online_passkey . $timestamp);
